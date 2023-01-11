@@ -69,8 +69,7 @@ public class Main {
         int i = 1;
         for (; totalSavings < 12_000_000; i++) {
             totalSavings = totalSavings + (totalSavings * percent);
-            boolean everySixth = (i%6 == 0);
-            if (everySixth) {
+            if (i%6 == 0) {
                 System.out.println("Месяц " + i + ", сумма накоплений " + (int) totalSavings);
             }
         }
@@ -87,8 +86,7 @@ public class Main {
         int j = 1;
         for (int i = 1; i <= totalMonths; i++) {
             totalSavings = totalSavings + (totalSavings * percent);
-            boolean everyHalfYear = (i%6 == 0);
-            if (everyHalfYear) {
+            if (i%6 == 0) {
                 System.out.println("Полугодие " + j + ", сумма накоплений " + (int) totalSavings);
                 j++;
             }
@@ -96,12 +94,8 @@ public class Main {
     }
     public static void task7 () {
         System.out.println("Задача 7");
-        int friday = 3;
-        for (int i = 1; i <= 31; i++) {
-            if (i == friday) {
-                System.out.println("Сегодня пятница, " + i + "-ое число. Необходимо подготовить отчёт");
-                friday = friday + 7;
-            }
+        for (int friday = 3; friday <= 31; friday = friday + 7) {
+            System.out.println("Сегодня пятница, " + friday + "-ое число. Необходимо подготовить отчёт");
         }
     }
     public static void task8 () {
@@ -109,13 +103,10 @@ public class Main {
         int year = 0;
         int start = 1823;
         int end = 2123;
-        for (; year < end; year++){
-            if (year > start) {
-                boolean every79 = (year % 79 == 0);
-                if (every79) {
+        for (year = start; year < end; year++){
+                if (year % 79 == 0) {
                     System.out.println(year);
                 }
-            }
         }
     }
 
